@@ -6,6 +6,8 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// TODO: Implement the Apollo Server and apply it to the Express server as middleware.
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
