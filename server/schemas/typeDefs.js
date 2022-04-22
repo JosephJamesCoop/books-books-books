@@ -21,9 +21,9 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: String
-    user: User
-  }
+        token: ID
+        user: User
+    }
 
   type Query {
     me: User
@@ -36,10 +36,6 @@ const typeDefs = gql`
     removeBook(BookId: String!): User
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
 `;
 
 module.exports = typeDefs;
