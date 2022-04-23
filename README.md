@@ -4,7 +4,7 @@
 
 
 ## Screenshot
-![Screenshot](client/public/app.png)
+![Screenshot](client/assets/app.png)
 
 
 
