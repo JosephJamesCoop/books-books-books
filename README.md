@@ -15,7 +15,7 @@ This is a book search and save app using google book API. Has been converted to 
   [GitHub Repo](https://github.com/JosephJamesCoop/books-books-books)
       
    [Live App](https://resilient-monstera-8c9171.netlify.app/)
-   *Please see known bugs in regards to live app usage.
+   *Please see    [Known Issues](#known-issues) in regards to live app usage.
       
   ## Table of Contents (Optional)
       
@@ -39,7 +39,7 @@ This is a book search and save app using google book API. Has been converted to 
      [![badge](https://img.shields.io/badge/E-Express.js-yellow)]()   [![badge](https://img.shields.io/badge/R-React-green)]()   [![badge](https://img.shields.io/badge/N-Node.js-blue)]() 
       
       
-## Known Issues
+# Known Issues
 
 During deployment Heroku was experiencing issues due to someone hacking SalesForce. Applicaiton is deployed using Netlify but is only a static website. Login / signup do not work on the live app. User will have to download from the Installation instruction section to use and test all aspects of the app locally.
       
