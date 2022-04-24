@@ -23,7 +23,7 @@ This is a book search and save app using google book API. Has been converted to 
       
   ## Installation
       
-  click on the word [LINK](https://github.com/JosephJamesCoop/books-books-books) select download or install with HTML or SSH. run npm install then NPM start.
+  click on the word [LINK](https://github.com/JosephJamesCoop/books-books-books) select download or install with HTML or SSH. run npm install then NPM run develop. Open on localhost:3000
       
   ## Usage 
       
