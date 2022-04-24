@@ -43,37 +43,32 @@ const resolvers = {
       return { token, user };
     },
 
-    saveBook: async (parent, { bookId, bookCount}, context) => {
-      const numBook = bookCount ++
+    saveBook: async (parent, { bookData }, context) => {
       if (context.user) {
-        const saveBook = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { savedBooks: bookId, bookCount: numBook } },
-          { new: true }  
-        ).populate("savedBooks");
-
-        return saveBook;
+          const user = await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $push: {savedBooks: bookData}},{ new: true }
+              );
+          return user;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
-    },
-
-    removeBook: async (parent, { bookId, bookCount}, context) => {
-      const numBook = bookCount --
-      if (context.user) {
-        const removeBook = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { savedBooks: bookId } },
-          { $addToSet: { bookCount: numBook } },
-          { new: true }  
-        ).populate("savedBooks");
-
-        return removeBook;
-      }
-
-      throw new AuthenticationError("You need to be logged in!");
-    },
+      throw new AuthenticationError('You need to be logged in to save a book!');
   },
+
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+          const user = await User.findOneAndUpdate(
+              {_id: context.user._id},
+              { $pull: {savedBooks: {bookId}}},
+              { new: true }
+          );
+
+          return user
+      }
+
+      throw new AuthenticationError('You need to be logged in to remove a book!');
+  }
+  }
 };
 
 module.exports = resolvers;
